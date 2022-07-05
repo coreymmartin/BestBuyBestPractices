@@ -18,13 +18,14 @@ namespace BestBuyBestPractices
 
         public void CreateDepartment(string Name)
         {
-            _conn.Execute("INSERT INTO departmens Name VALUES(@Name);", new { Name = Name });
+            _conn.Execute("INSERT INTO departmens Name VALUES(@Name);", 
+            new { Name = Name });
         }
 
-        //idk if we need this update guy.
         public void UpdateDepartment(int id, string newName)
         {
-            _conn.Execute("UPDATE departments SET Name = @newName WHERE DepartmentID = @id;", new {newName = newName, id = id});
+            _conn.Execute("UPDATE departments SET Name = @newName WHERE DepartmentID = @id;", 
+            new {newName = newName, id = id});
         }
 
         public IEnumerable<Department> GetDepartments()

@@ -24,13 +24,40 @@ namespace BestBuyBestPractices
             // product: (bonus) update product - implement it.
             // product: (bunous bonus) delete product - implement it.
 
-            Console.WriteLine("welome to the best buy database manager" +
-                "please enter an option to continue" +
-                "1: View" +
-                "2: Edit" +
-                "3:" +
-                "4:" +
-                "0: Exit");
+        /*
+        // from class
+        var repo = new DapperDepartmentRepository(conn);
+        Console.WriteLine("All departments:");
+        var departments = repo.GetDepartments();
+        foreach (var dept in departments){
+            Console.WriteLine($"{dept.DepartmentID} {dept.Name}");
+        }
+        //Console.WriteLine("What is the new department name?");
+        //var deptName = Console.ReadLine();
+        //repo.CreateDepartment(deptName);
+
+        var prodRepo = new DapperProductRepository(conn);
+        var products = prodRepo.GetAllProducts();
+        foreach (var prod in products){
+            Console.WriteLine($"{prod.ProductID}: {prod.Name}: ${prod.Price}");
+        }
+        Console.WriteLine("");
+        Console.WriteLine("what is the name of the new product?");
+        var prodName = Console.ReadLine();
+        Console.WriteLine("what is the product price?");
+        var prodPrice = double.Parse(Console.ReadLine());
+        Console.WriteLine("what is the category id?");
+        var prodCat = int.Parse(Console.ReadLine());
+        prodRepo.CreateProduct(prodName, prodPrice, prodCat);
+
+        foreach (var prod in products){
+            Console.WriteLine($"{prod.ProductID}: {prod.Name}: ${prod.Price}");
+        }
+
+        // end of class
+        */
+        var mrMenu = new Schedule(conn);
+        mrMenu.Run();
 
         }
     }
